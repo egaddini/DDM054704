@@ -89,4 +89,18 @@ public class MyPaint extends View {
         invalidate();
         return true;
     }
+
+    public void apagaTudo() {
+        mPaints.clear();
+        mPaths.clear();
+        invalidate();
+    }
+
+    public void apagaUlt() {
+        if (mPaints.size() > 0) {
+            mPaints.remove(mPaints.size() - 1);
+            mPaths.remove(mPaths.size() - 1);
+        }
+        invalidate();
+    }
 }

@@ -20,12 +20,18 @@ public class MainActivity extends AppCompatActivity {
     MyPaint myPaint;
     ImageView ivColorPicker;
     SeekBar seekBar;
+    Button apagar, apagartudo, quadrado, linha, circulo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myPaint = findViewById(R.id.myPaint);
         seekBar = findViewById(R.id.seekBar);
+        apagar = findViewById(R.id.apg);
+        apagartudo = findViewById(R.id.apgtd);
+        linha = findViewById(R.id.line);
+        quadrado = findViewById(R.id.square);
+        circulo = findViewById(R.id.circle);
 
         ivColorPicker = findViewById(R.id.ivColorPicker);
         ivColorPicker.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void setStroke(int width) {
         myPaint.setCurrentLayerWidth(width);
+    }
+
+    public void onClickApagar(View view) {
+        myPaint.apagaTudo();
+    }
+
+    public void onClickApagarUlt(View view) {
+        myPaint.apagaUlt();
     }
 
 }
